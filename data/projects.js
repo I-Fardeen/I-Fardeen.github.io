@@ -15,6 +15,7 @@ const featuredProjects = [
         ],
         featured: true
     },
+
     {
         name: "Data Science & ML Portfolio",
         repo: "Data-Science-Repo",
@@ -28,8 +29,27 @@ const featuredProjects = [
             "Data Science"
         ],
         featured: true
+    },
+
+    {
+        name: "Data Science Reading Material",
+        repo: "Data-Science-Repo/tree/main/Reading%20Material",
+        url: "https://github.com/I-Fardeen/Data-Science-Repo/tree/main/Reading%20Material",
+        category: "TECHNICAL KNOWLEDGE · OPEN EDUCATIONAL RESOURCE",
+        description:
+            "A substantial collection of primarily self-authored Markdown-based technical references, cheat sheets, tutorials, and learning guides covering Python, statistics, data science, machine learning, NLP, visualization, databases, and deep learning.",
+        technologies: [
+            "Markdown",
+            "Python",
+            "Data Science",
+            "Machine Learning",
+            "NLP",
+            "Technical Writing"
+        ],
+        featured: true
     }
 ];
+
 
 const languageRepositories = [
     "PythonRepo",

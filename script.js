@@ -247,10 +247,14 @@ function createProjectCard(
     card.className =
         "featured-project";
 
-    const githubUrl = repository
-        ? repository.html_url
-        : `https://github.com/` +
-          `${GITHUB_USERNAME}/${project.repo}`;
+    const githubUrl =
+        project.url ||
+        (
+            repository
+                ? repository.html_url
+                : `https://github.com/` +
+                  `${GITHUB_USERNAME}/${project.repo}`
+        );
 
     const projectNumber =
         String(index + 1).padStart(2, "0");
@@ -289,7 +293,10 @@ function createProjectCard(
                 </span>
             </div>
         `;
-    } else if (project.repo === "fak-log-analyzer") {
+    } else if (
+        project.name ===
+        "FAK Log Analyzer"
+    ) {
         repositoryStats = `
             <div class="project-stats">
                 <span>
@@ -301,7 +308,7 @@ function createProjectCard(
         repositoryStats = `
             <div class="project-stats">
                 <span>
-                    GitHub repository
+                    GitHub project
                 </span>
             </div>
         `;
@@ -345,9 +352,10 @@ function createProjectCard(
                 ${
                     repository
                         ? "View repository →"
-                        : project.repo === "fak-log-analyzer"
-                            ? "GitHub repository →"
-                            : "View on GitHub →"
+                        : project.name ===
+                          "FAK Log Analyzer"
+                            ? "Repository coming soon →"
+                            : "Explore on GitHub →"
                 }
             </a>
         </div>
@@ -356,31 +364,31 @@ function createProjectCard(
     return card;
 }
 
-
 /* =========================================
    LOAD FEATURED PROJECTS
 ========================================= */
-
 async function loadFeaturedProjects() {
-
     if (!featuredProjectsContainer) {
         return;
     }
 
-
     featuredProjectsContainer.innerHTML = "";
-
 
     for (
         const [index, project]
         of featuredProjects.entries()
     ) {
+        let repository = null;
 
-        const repository =
-            await getRepository(
-                project.repo
-            );
-
+        if (
+            project.name !==
+            "Data Science Reading Material"
+        ) {
+            repository =
+                await getRepository(
+                    project.repo
+                );
+        }
 
         const card =
             createProjectCard(
@@ -388,7 +396,6 @@ async function loadFeaturedProjects() {
                 repository,
                 index
             );
-
 
         featuredProjectsContainer.appendChild(
             card
