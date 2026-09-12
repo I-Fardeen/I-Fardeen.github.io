@@ -155,7 +155,9 @@ const githubImpact = {
 
     forks: 3,
 
-    repositories: 12
+    repositories: 12,
+
+    technicalResources: 100
 
 };
 
@@ -227,6 +229,17 @@ function renderGitHubStats() {
             </span>
 
         </div>
+
+        <div class="github-stat">
+    <strong>
+        ${formatNumber(
+            githubImpact.technicalResources
+        )}+
+    </strong>
+    <span>
+        Technical Resources Authored
+    </span>
+</div>
 
     `;
 }
