@@ -24,6 +24,15 @@ A collection of applied data-science and machine-learning work covering predicti
 
 **Focus:** Python · Machine Learning · NLP · Data Science
 
+### Data Science Reading Material
+
+A substantial collection of primarily self-authored, Markdown-based technical references, cheat sheets, tutorials, and learning guides covering Python, statistics, data science, machine learning, NLP, visualization, databases, deep learning, and related technologies.
+
+**Focus:** Markdown · Python · Data Science · Machine Learning · NLP · Technical Writing
+
+**Reading Material:**  
+https://github.com/I-Fardeen/Data-Science-Repo/tree/main/Reading%20Material
+
 ## Research Interests
 
 - Artificial Intelligence & Intelligent Systems
